@@ -13,21 +13,25 @@ import tp7.view.BibliothequeVueGUI;
 public class BibliothequeMVC {
 	public BibliothequeMVC() {
 		//Création du modèle
+		Bibliotheque bibli = new Bibliotheque();
 		
 		//TODO
-
+		BibliothequeController controllerConsole = new BibliothequeController(bibli);
+		BibliothequeController controllerGUI = new BibliothequeController(bibli);
 		//Création des contrôleurs : Un pour chaque vue
 		//Chaque contrôleur doit avoir une référence vers le modèle pour pouvoir le commander
 		
 		//TODO
-		
+		BibliothequeVueConsole bvc= new BibliothequeVueConsole(bibli,controllerConsole);
+		BibliothequeVueGUI bvi= new BibliothequeVueGUI(bibli,controllerGUI,200,400);
 		//Création des vues.
 		//Chaque vue doit connaître son contrôleur et avoir une référence vers le modèle pour pouvoir l'observer
 		
 		//TODO
 		
 		//On donne la référence à la vue pour chaque contrôleur
-		
+		controllerConsole.addView(bvc);
+		controllerGUI.addView(bvi);
 		//TODO
 		
 		

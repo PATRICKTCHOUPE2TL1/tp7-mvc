@@ -14,6 +14,7 @@ public abstract class BibliothequeVue implements Observer{
 			BibliothequeController controller) {
 		this.model = model;
 		this.controller = controller;
+		model.addObserver(this);
 		// TODO : Connexion entre la vue et le modele
 	}
 

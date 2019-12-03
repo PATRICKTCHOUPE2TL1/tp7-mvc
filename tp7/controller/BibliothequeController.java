@@ -12,11 +12,17 @@ public class BibliothequeController {
 
 
 	public void emprunteLivre(int numLivre) {
-	
+	  if(model.emprunte(numLivre)) {
+		  vue.affiche("Livre "+numLivre+" : disponible");
+	  }
+	  else
+		  vue.affiche("Livre "+numLivre+" : indisponible ");
 		//TODO 
 	}
-
+	
 	public void rendreLivre(int numLivre) {
+		model.rendre(numLivre);
+		vue.affiche("Livre "+numLivre+" rendu");
 		//TODO
 	}
 

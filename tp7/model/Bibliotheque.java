@@ -1,8 +1,9 @@
 package tp7.model;
 
 //TODO : Me transformer en modèle!
+import java.util.*;
 
-public class Bibliotheque{
+public class Bibliotheque extends Observable{
 	Livre [] livres; 
 	
 	public Bibliotheque(){
